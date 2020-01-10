@@ -1,0 +1,36 @@
+{
+  "name": "react-invent-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --mode development --open --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/redjamhere/react-invent-app.git"
+  },
+  "author": "Redjam Lab. (Zaymanov Ainur)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redjamhere/react-invent-app/issues"
+  },
+  "homepage": "https://github.com/redjamhere/react-invent-app#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
