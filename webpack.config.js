@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
-  mode: "production",
 
   // Enable sourcemaps for debugging webpack's output.
   devtool: "source-map",
@@ -9,18 +9,19 @@ module.exports = {
   entry: './src/index.tsx',
 
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.resolve(__dirname, '/dist'),
     filename: 'bundle.min.js',
-    publicPath: '/'
+    publicPath: '/dist'
   },
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx"]
+    extensions: [".ts", ".tsx", ".js"]
   },
 
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    overlay: true,
   },
 
   module: {
