@@ -1,5 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 
@@ -16,12 +16,13 @@ module.exports = {
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js", ".css", ".styl"]
   },
 
   devServer: {
     historyApiFallback: true,
     overlay: true,
+    port: 9000
   },
 
   module: {
@@ -35,13 +36,27 @@ module.exports = {
           }
         ]
       },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+
+      {
+        test: /\.css$i/,
+        use: ['style-loader', 'css-loader']
+      },
+
+      {
+        test: /\.styl$/,
+        use: [
+          {loader: MiniCssExtractPlugin.loader, options: {publicPath: '/dist'}},
+          {loader: "css-loader"},
+          {loader: "stylus-loader"}
+        ]
+      },
+
       {
         enforce: "pre",
         test: /\.js$/,
         loader: "source-map-loader"
       }
-    ]
+    ],
   },
 
   // When importing a module whose path matches one of the following, just
@@ -51,5 +66,12 @@ module.exports = {
   externals: {
     "react": "React",
     "react-dom": "ReactDOM"
-  }
+  },
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
+  ]
 }
