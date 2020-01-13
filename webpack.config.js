@@ -1,5 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 
@@ -9,7 +10,7 @@ module.exports = {
   entry: './src/index.tsx',
 
   output: {
-    path: path.resolve(__dirname, '/dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.min.js',
     publicPath: '/dist'
   },
@@ -38,17 +39,20 @@ module.exports = {
       },
 
       {
-        test: /\.css$i/,
+        test: /\.css$/,
+        exclude: /node_modules/,
         use: ['style-loader', 'css-loader']
       },
 
       {
         test: /\.styl$/,
         use: [
-          {loader: MiniCssExtractPlugin.loader, options: {publicPath: '/dist'}},
-          {loader: "css-loader"},
-          {loader: "stylus-loader"}
-        ]
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'stylus-loader',
+          },
+        ],
       },
 
       {
@@ -59,19 +63,18 @@ module.exports = {
     ],
   },
 
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
   externals: {
     "react": "React",
     "react-dom": "ReactDOM"
   },
 
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
+    new HtmlWebpackPlugin({template: './index.html'})
   ]
+  // plugins: [
+  //   new MiniCssExtractPlugin({
+  //     filename: "[name].css",
+  //     chunkFilename: "[id].css"
+  //   })
+  // ]
 }
