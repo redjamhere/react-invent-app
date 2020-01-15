@@ -2,41 +2,45 @@
   "name": "react-invent-app",
   "version": "1.0.0",
   "description": "",
-  "main": "main",
+  "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open",
+    "clear": "del-cli dist"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/redjamhere/react-invent-app.git"
   },
-  "author": "Redjam Lab. (Zaymanov Ainur)",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/redjamhere/react-invent-app/issues"
   },
   "homepage": "https://github.com/redjamhere/react-invent-app#readme",
   "devDependencies": {
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "css-loader": "^3.4.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.4.2",
+    "del-cli": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.9.0",
     "path": "^0.12.7",
-    "source-map-loader": "^0.2.4",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
     "style-loader": "^1.1.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
   }
 }

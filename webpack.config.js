@@ -1,80 +1,69 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-
-  // Enable sourcemaps for debugging webpack's output.
-  devtool: "source-map",
-
-  entry: './src/index.tsx',
+  entry: [ 
+    './src/js/index.js',
+    './src/stylus/main.styl'
+  ],
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.min.js',
+    filename: './js/bundle.min.js',
     publicPath: '/dist'
   },
 
-  resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".css", ".styl"]
+  devServer: {
+    overlay: true,
+    historyApiFallback: true,
+    port: 1488
   },
 
-  devServer: {
-    historyApiFallback: true,
-    overlay: true,
-    port: 9000
-  },
+  devtool: 'source-map',
 
   module: {
     rules: [
-      {
-        test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "ts-loader"
-          }
-        ]
-      },
 
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader']
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src/js'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            preset: 'env'
+          }
+        }
       },
 
       {
         test: /\.styl$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'stylus-loader',
-          },
-        ],
+        include: path.resolve(__dirname, 'src/stylus'),
+        use: ExtractTextPlugin.extract({
+          use: [{
+              loader: "css-loader",
+              options: {
+                sourceMap: true,
+                minimize: true,
+                url: false
+              }
+            },
+            {
+              loader: "stylus-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        })
       },
-
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        loader: "source-map-loader"
-      }
-    ],
+    ]
   },
-
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  },
-
   plugins: [
-    new HtmlWebpackPlugin({template: './index.html'})
+    new ExtractTextPlugin({
+      filename: './css/style.bundle.css',
+      allChunks: true
+    }),
+    new HtmlWebpackPlugin()
   ]
-  // plugins: [
-  //   new MiniCssExtractPlugin({
-  //     filename: "[name].css",
-  //     chunkFilename: "[id].css"
-  //   })
-  // ]
 }
