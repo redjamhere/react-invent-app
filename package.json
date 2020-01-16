@@ -1,46 +1,40 @@
 {
-  "name": "react-invent-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "webpack-stylus-pug",
+  "version": "0.1.0",
+  "description": "Simple Stylus Pug Webdesign Starter Pack",
+  "main": "main.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server --mode development --open",
-    "clear": "del-cli dist"
+    "dev": "node build/dev-server.js",
+    "build": "webpack --config 'build/webpack.build.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/redjamhere/react-invent-app.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/redjamhere/react-invent-app/issues"
-  },
-  "homepage": "https://github.com/redjamhere/react-invent-app#readme",
+  "author": "Tho <t@ghci.de>",
+  "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^3.4.2",
-    "del-cli": "^3.0.0",
+    "base64-inline-loader": "^1.1.0",
+    "connect-history-api-fallback": "^1.5.0",
+    "css-loader": "^3.2.0",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^4.2.0",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-exclude-assets-plugin": "0.0.7",
+    "html-webpack-include-assets-plugin": "^2.0.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "^3.2.0",
-    "path": "^0.12.7",
-    "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
-    "style-loader": "^1.1.2",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
-    "webpack": "^4.41.5",
+    "inline-style-loader": "0.0.5",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "raw-loader": "^3.1.0",
+    "style-ext-html-webpack-plugin": "^4.1.2",
+    "style-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
-  },
-  "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.21.0",
+    "webpack-merge": "^4.1.1"
   }
 }

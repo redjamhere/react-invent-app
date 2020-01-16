@@ -1,0 +1,84 @@
+*
+  padding 0
+  margin 0 
+
+.nav-wrapper
+  display grid
+  grid-template-rows 1fr
+  grid-template-columns 1fr 1fr
+  height 60px
+  background: white
+  box-shadow: 0 0 10px #b2bec3
+
+.nav-header
+  display flex
+  height 100%
+
+.nav-header .name, .nav-header .icon
+  display flex
+  align-items center
+  padding 10px
+
+.nav-header .icon img
+  height 40px
+
+.nav-controls 
+  height 100%
+  font-family: 'Ubuntu', sans-serif;
+
+.help > img 
+  height 20px
+
+.notification > img
+  height 20px
+
+.mini-profile-avatar
+  height 40px
+  border-radius 360px
+  width 40px
+  overflow hidden
+  background red
+
+.mini-profile-avatar > img
+  height 40px
+
+.controls-list
+  list-style-type none
+  display flex
+  height 100%
+  align-items center
+  justify-content flex-end 
+
+.control-item
+  padding 0 10px 0 10px
+
+.profile-dropdown-control .dropdown-content
+  position: absolute
+  top: 64
+  right: 10
+  background: white
+  width: 180px
+  height: 140px
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+.profile-dropdown-control .dropdown-content .dropdown-list
+  list-style-type: none
+  margin: 0
+  padding: 0
+  height: 100%
+  display: flex
+  flex-direction: column
+
+.profile-dropdown-control > .dropdown-content > .dropdown-list > .dropdown-item
+  height: 100%
+  border-bottom: 1px solid #dfe6e9
+
+.profile-dropdown-control > .dropdown-content > .dropdown-list > .dropdown-item:last-child
+  border 0
+
+.profile-dropdown-control > .dropdown-content > .dropdown-list > .dropdown-item > .link
+  height: 100%
+  display: flex
+  align-items: center
+  cursor: pointer
