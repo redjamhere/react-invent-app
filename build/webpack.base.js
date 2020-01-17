@@ -3,7 +3,7 @@ const path = require('path')
 const config = require('../config')
 
 module.exports = {
-  entry: [ './' + path.join('.', config.styleInput) ],
+  entry: [ './' + path.join('.', config.styleInput), './src/code.js' ],
   output: {
     path: path.join(__dirname, '..', 'dist'),
     filename: 'bundle.js'

@@ -1,35 +1,32 @@
-
-nav.nav-wrapper
-  .nav-header.nav-item
-    .icon
-      img(src="assets/project-icon.png", alt="Zaymanov Ainur Project")
-    .name
-      h4 InvAcc
-  .nav-controls.nav-item
-    ul.controls-list
-      li.control-item
-        .help
-          img(src="assets/help-icon64.png", alt="Помощь")
-      li.control-item 
-        .notification
-          img(src="assets/bell-icon64.png", alt="Уведомления")
-      li.control-item
-        .mini-profile-avatar
-          img(src="assets/none-profile-picture.jpg", alt="")
-      li.control-item
-        .profile-dropdown-control
-          button.dropbtn.username Иван
-            i(class="fas fa-sort-down")
-          .dropdown-content
-            ul.dropdown-list
-              li.dropdown-item
-                a(class= "link dropdown-link") Профиль
-              li.dropdown-item
-                a(class= "link dropdown-link") Настройки
-              li.dropdown-item
-                a(class= "link dropdown-link") Выйти
-
-
-
-
+.nav-header.nav-item
+  .icon
+    img(src="assets/project-icon.png", alt="Zaymanov Ainur Project")
+  .name
+    h4 InvAcc
+.nav-controls.nav-item
+  ul.controls-list
+    li.control-item
+      .help
+        img(src="assets/help-icon64.png" class="control-img", alt="Помощь")
+        img(src="assets/help-icon64-hovered.png" class="control-img img-top", alt="Помощь")
+    li.control-item 
+      .notification
+        img(src="assets/bell-icon64.png" class="control-img" alt="Уведомления")
+        img(src="assets/bell-icon64-hovered.png" class="control-img img-top", alt="Уведомления")
+    li.control-item
+      .mini-profile-avatar
+        img(src="assets/none-profile-picture.jpg", alt="")
+    li.control-item
+      .profile-dropdown-control
+        button.dropbtn.username 
+          span(class="dropbtn-label") Айнур
+          i(class="fas fa-sort-down")
+        .dropdown-content
+          ul#dropdown-list.dropdown-list
+            li.dropdown-item
+              a(class= "link dropdown-link") Профиль
+            li.dropdown-item
+              a(class= "link dropdown-link") Настройки
+            li.dropdown-item
+              a(class= "link dropdown-link") Выйти
   
