@@ -1,0 +1,22 @@
+.auth-warp
+  .auth-block-warp
+    .back-layer
+    .auth-form
+      .auth-icon
+        img(src="assets/auth-icon.png", alt="")
+      .auth-header
+        h1 Авторизация
+      .auth-description
+        span Система безопасности InvAcc обеспечивает защиту <br> личных данных пользователей и предприятия
+      .auth-inputs
+        form(action="" method="post")
+          .login-input.input-block
+            i(class="far fa-user")
+            input(type="text" id="username" placeholder="Ваш логин")
+          .password-input.input-block
+            i(class="fas fa-key")
+            input(type="password" id="password" placeholder="Ваш пароль")
+          .submit-input.input-block
+            input(type="submit" value="Вход")
+      .footer
+        span Designed by Zaymanov Aynur
