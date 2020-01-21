@@ -20,7 +20,7 @@ $(document).ready(() => {
 
   $('.menu').mouseenter(function() {
     $('.menu').animate({
-      width: "210"
+      width: "220"
     }, 130)
   })
   
