@@ -1,6 +1,13 @@
 import $ from 'jquery'
 
 let modalWindowOpenStatus = false
+let viewstatus = true
+
+//animated hover on open icon 
+
+$('body').click(function(event){
+  console.log(event.target)
+})
 
 $(document).ready(() => {
 
@@ -23,7 +30,7 @@ $(document).ready(() => {
     }, 130)
   })
 
-
+  //open deaprt modal window
   $('.depart-modal-button .open-icon').click(() => {
     if (!modalWindowOpenStatus) {   
 
@@ -59,5 +66,22 @@ $(document).ready(() => {
     }
     modalWindowOpenStatus = !modalWindowOpenStatus
   })
+
+  //viewstatus colored
+  $('.view-status').click(function() {
+    if(viewstatus) {
+      $(this).find('.depart-view-true').hide();
+      $(this).find('.depart-view-false').show();
+    } else {
+      $(this).find('.depart-view-true').show();
+      $(this).find('.depart-view-false').hide();
+    }
+    viewstatus = !viewstatus
+  })
+
+  $('tbody .table-data-inp').keydown(function(){
+    this.style.width = ((this.value.length + 1) * 8) + 'px';
+  })
+
 })
 
