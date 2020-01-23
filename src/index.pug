@@ -3,10 +3,26 @@
 
 head
   title #{title}
+  link( href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css")
+
   script(src="https://kit.fontawesome.com/9660b02901.js" crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.extensions.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/vendors/easings.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/vendors/scrolloverflow.min.js")
 body
   include pug/views/main.pug
 
+  script.
+    new fullpage('#fullpage', {
+      autoScrolling: true,
+      css3: true,
+      loopBottom: false,
+      loopTop: false,
+    });
+
+    //methods
+    //- fullpage_api.setAllowScrolling(false);
 
 
   

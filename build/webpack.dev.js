@@ -10,6 +10,13 @@ const webpackBaseConfig = require('./webpack.base')
 module.exports = merge(webpackBaseConfig, {
   mode: 'development',
   entry: ['./build/dev-client.js'],
+  
+  resolve: {
+    alias: {
+      'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
+    }
+  },
+
   module: {
     rules: [{
         test: /\.styl$/,

@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import 'jquery-ui'
 
 let modalWindowOpenStatus = false
 let viewstatus = true
@@ -79,9 +80,8 @@ $(document).ready(() => {
     viewstatus = !viewstatus
   })
 
-  $('tbody .table-data-inp').keydown(function(){
-    this.style.width = ((this.value.length + 1) * 8) + 'px';
-  })
-
+  $('tbody').on( 'change keyup keydown paste cut', 'textarea', function (){
+    $(this).height(0).height(this.scrollHeight);
+  }).find( 'textarea' ).change();
 })
 
