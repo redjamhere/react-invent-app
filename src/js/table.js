@@ -15,7 +15,6 @@ function openDepartModal() {
 
     $('.depart-modal-window').animate({
       height: "95%",
-      zIndex: "0"
     }, 700)
 
     $('.depart-modal-button').animate({
@@ -29,14 +28,14 @@ function openDepartModal() {
 
     $('.depart-modal-window').animate({
       height: "0%",
-      zIndex: "-1"
+      zIndex: "0"
     }, 700)
 
     
     $('.depart-modal-button').css({"top": '', "margin": ''})
     $('.depart-modal-button').animate({
       bottom: "0",
-      margin: "auto"
+      margin: "auto",
     }, 500);
 
     $('.depart-modal-button').css({"flex-direction": "column"});
