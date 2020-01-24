@@ -58,6 +58,7 @@
   height: 0%
   left 0
   right: 0
+  z-index 99
   bottom: 0
   border-top-left-radius: 10px
   border-top-right-radius: 10px
@@ -171,22 +172,27 @@
   color: rgb(52,73,94)
   border-bottom: 1px solid #7f8c8d
 
-.section
-  display: flex
-  align-items: center
-  max-height: 100%
-  justify-content: center
-
 .tables-section-warp
-  display: flex
+  height: 90vh
+  width: 100%
+  overflow: auto
+
+.table-section
   height: 100%
   width: 100%
+  display: flex
   align-items: center
   justify-content: center
+  border-bottom: 2px dashed #bdc3c7
+  width: 95%
+  margin: auto
+
+.table-section:last-child
+  border-bottom: 0
 
 .table-block
   height: 800px
-  width: 95%
+  width: 100%
   border-radius: 10px;
   background white
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -282,23 +288,39 @@
   color: #3e3e3e
 
 .table
-  overflow: auto
   margin: 0 30px 10px 30px
+  overflow-y: hidden
 
 .table #t-tbl
   font-family: 'Ubuntu', sans-serif
   border-collapse: collapse
 
-.table #t-tbl thead th
-  color: #3e3e3e
-  font-weight: lighter
-
 .table #t-tbl thead
+  z-index: -1
   background: #fafcfe
   border-top: 1px solid #ecf0f1
   border-bottom: 1px solid #ecf0f1
   min-height: 60px
   height: 60px
+  display: flex
+  align-items: center
+
+.table #t-tbl thead tr
+  display: block;
+  position: relative;
+
+.table #t-tbl thead tr th
+  text-align: center
+  min-width: 250px
+  padding: 0 10px 0 10px
+  color: #3e3e3e
+
+.table #t-tbl tbody
+  height: 550px 
+  display: block
+  overflow-y: auto;
+  overflow-x: hidden;
+  width:100%;
 
 .table #t-tbl tbody tr
   border-bottom: 1px solid #ecf0f1
@@ -311,13 +333,17 @@
   min-width: 250px
   padding: 0 10px 0 10px
 
-.table #t-tbl tbody .row-id
-  color: #636e72
+.table #t-tbl tbody .row-id, .table #t-tbl thead .row-id
+  color: #39a1f9
   text-align: center
   min-width: 60px
 
-.table #t-tbl tbody .row-checkbox
+
+.table #t-tbl tbody .row-checkbox 
   min-width: 30px
+
+.table #t-tbl thead .row-checkbox
+  min-width: 0px
 
 .table #t-tbl tbody .new-row
   border-bottom: 1px solid rgb(46, 204, 113)
@@ -345,6 +371,3 @@
 .table #t-tbl tbody tr td textarea:focus
   background: #ecf0f1
   min-height: 60px
-
-.search-inp
-  width: 0
