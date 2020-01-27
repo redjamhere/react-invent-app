@@ -1,12 +1,27 @@
-- var appName = 'your Website'
 - var title = 'InvAcc'
 
 head
   title #{title}
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css")
+  
+  //- script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js")
+  //- script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.extensions.min.js")
+  //- script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/vendors/easings.min.js")
+  //- script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/vendors/scrolloverflow.js")
   script(src="https://kit.fontawesome.com/9660b02901.js" crossorigin="anonymous")
 
 body
-  include pug/views/main.pug
+  include pug/views/auth.pug
+
+  //- script.
+  //-   new fullpage('#fullpage', {
+  //-     //options here
+  //-     autoScrolling:true,
+  //-     scrollHorizontally: true
+  //-   });
+
+  //-   //methods
+  //-   fullpage_api.setAllowScrolling(false);
 
 
   

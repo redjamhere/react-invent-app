@@ -22,9 +22,17 @@ function openDepartModal() {
       margin: "0"
     }, 550)
 
+    $('.table #t-tbl thead th').css({"display": "none"})
+
+    $('.table #t-tbl tbody th').css({"display": "none"})
+
     $('.depart-modal-button').css({"flex-direction": "column-reverse"})
+
     $('.depart-modal-button .open-icon').css({"transform": "rotate(180deg)"})
   } else {
+
+    $('.table #t-tbl thead th').css({"display": ""})
+    $('.table #t-tbl tbody th').css({"display": ""})
 
     $('.depart-modal-window').animate({
       height: "0%",
@@ -40,6 +48,7 @@ function openDepartModal() {
 
     $('.depart-modal-button').css({"flex-direction": "column"});
     $('.depart-modal-button .open-icon').css({"transform": "rotate(0deg)"});
+
   }
   modalWindowOpenStatus = !modalWindowOpenStatus;
 }
