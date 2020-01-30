@@ -1,0 +1,133 @@
+.auth-warp
+  height: 100vh
+  background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(90, 139, 242), rgb(0, 131, 176)) repeat scroll 0% 0%;
+  display: flex
+  align-items: center
+  justify-content: center
+
+.auth-block-warp
+  height: 700px
+  width: 500px
+  position: relative
+  display: flex
+  justify-content: center
+
+.back-layer
+  background: #f1f2f6
+  position: absolute
+  width: 100%
+  height: 600px
+  margin: auto
+  right: 0
+  top: 0
+  left: 0
+  bottom: 0
+  border-radius: 20px
+
+.auth-form
+  height: 100%
+  background: white
+  width: 400px
+  border-radius: 20px
+  z-index 1
+  display: grid
+  grid-template-rows: 200px 70px 70px 1fr 70px
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+
+.auth-icon
+  display: flex
+  align-items: center
+  justify-content: center
+
+.auth-icon img
+  height 150px
+
+.auth-header, .auth-description
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+.auth-header h1
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: lighter
+  color: #636e72
+  margin-bottom: 5px
+
+.auth-description span
+  text-align: center
+  font-size: 14px
+  font-family: 'Ubuntu', sans-serif;
+  color: #bdc3c7
+
+.auth-inputs
+  display: flex
+  align-items: center
+  justify-content: space-around
+  
+.icon-wrap
+  height: 50px
+  width: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+  position: absolute
+  color: #5a8bf2
+
+.input-block
+  width: 330px
+  border-radius: 360px
+  height: 50px
+  position relative
+
+.input-block input
+  width: 100%
+  border-radius: 360px
+  height: 100%
+  border: 0
+  font-family: 'Ubuntu', sans-serif;
+
+.login-input
+  margin-bottom: 20px
+  border: 2px solid #ecf0f1
+
+.login-input input 
+  padding: 0 10px 0 50px
+  box-sizing: border-box
+  font-size: 16px
+  color: #34495e
+  
+.password-input
+  margin-bottom: 20px
+  border: 2px solid #ecf0f1
+
+.password-input input 
+  padding: 0 10px 0 50px
+  box-sizing: border-box
+  font-size: 16px
+  color: #34495e
+
+.submit-input
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: .2s
+   
+.submit-input input
+  cursor: pointer
+  font-size: 16px
+  background: #5a8bf2
+  color: white
+  transition: .2s
+
+.submit-input input:hover
+  background: #4e77cd
+
+.auth-form .footer
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+.auth-form .footer span
+  font-size: 14px
+  font-family: 'Ubuntu', sans-serif;
+  color: #bdc3c7

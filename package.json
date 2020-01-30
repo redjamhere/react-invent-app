@@ -1,41 +1,41 @@
 {
-  "name": "react-invent-app",
+  "name": "inventoryapp",
   "version": "1.0.0",
   "description": "",
-  "main": "main",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "dev": "webpack-dev-server --mode development --open"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/redjamhere/react-invent-app.git"
-  },
-  "author": "Redjam Lab. (Zaymanov Ainur)",
+  "author": "Zaymanov Ainur",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/redjamhere/react-invent-app/issues"
-  },
-  "homepage": "https://github.com/redjamhere/react-invent-app#readme",
   "devDependencies": {
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "css-loader": "^3.4.1",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "path": "^0.12.7",
     "source-map-loader": "^0.2.4",
-    "style-loader": "^1.1.2",
+    "style-loader": "^1.1.3",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
+    "url-loader": "^3.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "axios": "^0.19.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
