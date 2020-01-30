@@ -1,42 +1,29 @@
 {
-  "name": "react-invent-app",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "main",
+  "main": "dist/main.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/redjamhere/react-invent-app.git"
-  },
-  "author": "Redjam Lab. (Zaymanov Ainur)",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/redjamhere/react-invent-app/issues"
-  },
-  "homepage": "https://github.com/redjamhere/react-invent-app#readme",
-  "devDependencies": {
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "css-loader": "^3.4.1",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "path": "^0.12.7",
-    "source-map-loader": "^0.2.4",
-    "style-loader": "^1.1.2",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
-  },
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.1",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/node": "^13.5.2",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
   }
 }
