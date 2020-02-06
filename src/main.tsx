@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 // import components
 import { Auth } from "./components/Auth/Auth"; // Authentificate compoents
 import { Workspace } from "./components/Workspace/Workspace"; // Main workspace component with tables and menu

@@ -1,26 +1,37 @@
 // import libs
 import * as React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// import bootstrap components
 import { Dropdown, DropdownButton, DropdownButtonProps } from 'react-bootstrap';
+import Alert from 'react-bootstrap/Alert';
+
+// import fontawesome icons
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
 
 // import styles
 import "./Nav.styl";
 
 // import images
 import projectIcon from "../../assets/images/project-icon.png";
-import helpIcon from "../../assets/images/help-icon64.png";
-import helpIconHovered from "../../assets/images/help-icon64-hovered.png";
-import notifIcon from "../../assets/images/bell-icon64.png";
-import notifIconHovered from "../../assets/images/bell-icon64-hovered.png";
 import noneAvatar from "../../assets/images/none-profile-picture.jpg";
+
 
 interface NavState {
   firstname: string;
 }
 
+//import components
+
+import { HelpAlert } from './HelpAlert';
+
 export class Nav extends React.Component<{}, NavState> {
   constructor(props: any) {
     super(props);
-    
+    this.state = {
+      firstname: 'Иван',
+    };
   }
 
   render() {
@@ -38,26 +49,24 @@ export class Nav extends React.Component<{}, NavState> {
           <ul className="controls-list">
             <li className="control-item">
               <div className="help">
-                <img src={helpIcon} alt="Помощь" className="control-img"/>
-                <img src={helpIconHovered} alt="Помощь" className="control-img img-top"/>
+                <FontAwesomeIcon className="nav-control-icon" icon={ faQuestionCircle }/>
               </div>
             </li>
             <li className="control-item">
               <div className="notification">
-                <img src={notifIcon} alt="Уведомления" className="control-img"/>
-                <img src={notifIconHovered} alt="Уведомления" className="control-img img-top"/>
+                <FontAwesomeIcon className="nav-control-icon" icon={ faBell }/>
               </div>
             </li>
             <li className="control-item">
               <div className="mini-profile-avatar">
-                <img src="" alt=""/>
+                <img src={noneAvatar} alt="prifile-mini-pic"/>
               </div>
             </li>
             <li className="control-item">
               <div className="profile-dropdown-control">
-                <Dropdown>
+                <Dropdown alignRight>
                   <Dropdown.Toggle variant="success" id="profile-dropdown">
-                    Dropdown Button
+                    {this.state.firstname}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item href="/auth">Профиль</Dropdown.Item>

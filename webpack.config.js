@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 
@@ -44,8 +45,24 @@ module.exports = {
         test: /\.styl$/,
         use: [
           {loader: MiniCssExtractPlugin.loader, options: {publicPath: '/'}},
-          {loader: "css-loader"},
-          {loader: "stylus-loader"}
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {loader: "stylus-loader"},
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     plugins: [
+          //       autoprefixer({
+          //         browsers: ['ie >=8', 'last 4 version']
+          //       }),
+          //     ],
+          //     sourceMap: true
+          //   }
+          // }
         ]
       },
 
