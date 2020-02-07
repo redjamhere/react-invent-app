@@ -13,7 +13,7 @@ import { TableEditor } from "./TableEditor";
 export class Workspace extends React.Component<{}, {}> {
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Nav/>
         <div className="workspace-warp">
           <LeftMenu/>
