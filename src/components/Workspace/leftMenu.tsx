@@ -4,15 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //fontawesome icons
 import { faBuffer } from '@fortawesome/free-brands-svg-icons';
-import { faBoxes, faDatabase, faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
+import { faBoxes, faLink } from '@fortawesome/free-solid-svg-icons';
 
 // import styles
 import './Leftmenu.styl'
+import { Link } from 'react-router-dom';
 
 interface MenuElementsProps {
   icon: any;
   text: string;
   index: number;
+  link: string;
 }
 
 class MenuElement extends React.Component<MenuElementsProps, {}> {
@@ -21,15 +23,18 @@ class MenuElement extends React.Component<MenuElementsProps, {}> {
   }
 
   render() {
+    
     return(
-      <li id="menu-item" className="menu-item">
-        <div className="menu-icon">
-          <FontAwesomeIcon icon={ this.props.icon }/>
-        </div>
-        <div className="menu-name">
-          <span className="menu-button-name">{ this.props.text }</span>
-        </div>
-      </li>
+      <Link to={this.props.link}>
+        <li id="menu-item" className="menu-item">
+          <div className="menu-icon">
+            <FontAwesomeIcon icon={ this.props.icon }/>
+          </div>
+          <div className="menu-name">
+            <span className="menu-button-name">{ this.props.text }</span>
+          </div>
+        </li>
+      </Link>
     )
   }
 }
@@ -40,7 +45,6 @@ interface LeftMenuState {
   mouseOverMenu: boolean;
   width: string;
 }
-
 
 export class LeftMenu extends React.Component<{}, LeftMenuState> {
   constructor(props: any) {
@@ -55,7 +59,7 @@ export class LeftMenu extends React.Component<{}, LeftMenuState> {
   
   enterMenu(e: any): void {
     this.setState({
-      width: "200px"
+      width: "220px"
     })
   }
 
@@ -69,22 +73,26 @@ export class LeftMenu extends React.Component<{}, LeftMenuState> {
     const menuList : Array<any> = [
       {
         icon: faBuffer,
-        text: "Сервисы"
+        text: "Сервисы",
+        link: "/"
       },
       {
         icon: faBoxes,
-        text: "Склад"
+        text: "Склад",
+        link: "/warehouse"
       },
       {
-        icon: faDatabase,
-        text: "Предприятие"
+        icon: faLink,
+        text: "Предприятие",
+        link: "/1c"
       },
     ]
     const listItem = menuList.map((elem, index) : any => {
       return (
-        <MenuElement index={index} icon={elem.icon} text={elem.text}/>
+        <MenuElement index={index} icon={elem.icon} text={elem.text} link={elem.link}/>
       );
     })
+
     return(
         <div
           style={{width: this.state.width}}
@@ -93,6 +101,7 @@ export class LeftMenu extends React.Component<{}, LeftMenuState> {
           onMouseLeave={ (e):void => this.leaveMenu(e) }
         >
             <ul className="menu-list">{listItem}</ul>
+        
         </div>
     );
   }

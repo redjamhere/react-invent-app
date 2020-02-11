@@ -1,6 +1,6 @@
 //libs connection
 import * as React from "react";
-
+import {HashRouter as Router} from 'react-router-dom';
 // import styles
 import './Workspace.styl';
 
@@ -12,12 +12,15 @@ import { TableEditor } from "./TableEditor";
 
 export class Workspace extends React.Component<{}, {}> {
   render() {
+
     return (
       <div className="wrapper">
         <Nav/>
         <div className="workspace-warp">
-          <LeftMenu/>
-          <TypeMenu/>
+          <Router>
+            <LeftMenu/>
+            <TypeMenu/>  
+          </Router>
           <TableEditor/>
         </div>
       </div>
